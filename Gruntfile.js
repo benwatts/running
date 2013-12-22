@@ -46,6 +46,9 @@ module.exports = function(grunt) {
           spawn: false
         }
       },
+      html: {
+        files: ['index.html']
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       }
