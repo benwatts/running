@@ -46,3 +46,10 @@ node_modules
 # sublime projects
 *.sublime-project
 *.sublime-workspace
+
+# SASS #
+######################
+*.sass-cache
+
+js/build/*
+css/build/*
