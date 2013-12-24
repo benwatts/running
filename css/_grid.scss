@@ -1,0 +1,42 @@
+$gutter: 30px;
+$halfGutter: $gutter/2;
+$cols: 24;
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: $halfGutter;
+  padding-right: $halfGutter;
+  @media (min-width: 768px)  { width: 750px; }
+  @media (min-width: 992px)  { width: 970px; }
+  @media (min-width: 1200px) { width: 1170px; }
+}
+.container:before,
+.container:after {
+  content: " ";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+
+.row {
+  margin-left: ($halfGutter * -1);
+  margin-right: ($halfGutter * -1);
+}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+
+$c: $cols;
+@while $c > 0 {
+  .span-#{$c}{
+    width: (($c/$cols)*100%)
+  }
+  $c: $c - 1
+}

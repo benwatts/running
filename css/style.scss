@@ -1,5 +1,19 @@
 // cool stuff bro
 
+@import 'grid';
+
 html, body {
   background: #222;
+}
+
+h1 {
+  color: #fff;
+  font-family: "ff-enzo-web";
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.map {
+  width: 480px;
+  height: 480px;
 }
