@@ -62,6 +62,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   //grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', ['watch', 'sass', 'coffee', 'livereload']);
+  grunt.registerTask('default', ['sass', 'coffee', 'watch']);
 
 };
