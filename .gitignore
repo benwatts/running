@@ -53,3 +53,4 @@ node_modules
 
 js/build/*
 css/build/*
+data/*
