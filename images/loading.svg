@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px">
+
+  <path fill="#999" d="M13,4.989C13,5.548,12.552,6,12,6l0,0c-0.552,0-1-0.452-1-1.011V1.011C11,0.452,11.448,0,12,0l0,0c0.552,0,1,0.452,1,1.011V4.989z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0s' />
+  </path>
+  <path fill="#999" d="M16.371,6.429C16.092,6.912,15.478,7.08,15,6.804l0,0c-0.478-0.276-0.64-0.892-0.361-1.375l1.989-3.446C16.908,1.5,17.522,1.332,18,1.608l0,0c0.478,0.276,0.64,0.892,0.361,1.375L16.371,6.429z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.0667s' />
+  </path>
+  <path fill="#999" d="M21.017,5.639C21.5,5.36,22.116,5.522,22.392,6l0,0c0.276,0.478,0.108,1.092-0.375,1.371l-3.446,1.989C18.088,9.64,17.472,9.478,17.196,9l0,0c-0.276-0.478-0.108-1.092,0.375-1.371L21.017,5.639z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.1333s' />
+  </path>
+  <path fill="#999" d="M19.011,13C18.452,13,18,12.552,18,12l0,0c0-0.552,0.452-1,1.011-1h3.979C23.548,11,24,11.448,24,12l0,0c0,0.552-0.452,1-1.011,1H19.011z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.2s' />
+  </path>
+  <path fill="#999" d="M22.017,16.629c0.483,0.279,0.651,0.893,0.375,1.371l0,0c-0.276,0.478-0.892,0.64-1.375,0.361l-3.446-1.989c-0.483-0.279-0.651-0.893-0.375-1.371l0,0c0.276-0.478,0.892-0.64,1.375-0.361L22.017,16.629z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.2667s' />
+  </path>
+  <path fill="#999" d="M18.361,21.017C18.64,21.5,18.478,22.116,18,22.392l0,0c-0.478,0.276-1.092,0.108-1.371-0.375l-1.989-3.446c-0.279-0.483-0.118-1.099,0.361-1.375l0,0c0.478-0.276,1.092-0.108,1.371,0.375L18.361,21.017z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.3333s' />
+  </path>
+  <path fill="#999" d="M13,22.989C13,23.548,12.552,24,12,24l0,0c-0.552,0-1-0.452-1-1.011v-3.979C11,18.452,11.448,18,12,18l0,0c0.552,0,1,0.452,1,1.011V22.989z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.4s' />
+  </path>
+  <path fill="#999" d="M7.371,22.017C7.092,22.5,6.478,22.668,6,22.392l0,0c-0.478-0.276-0.64-0.892-0.361-1.375l1.989-3.446C7.908,17.088,8.522,16.92,9,17.196l0,0c0.478,0.276,0.64,0.892,0.361,1.375L7.371,22.017z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.4667s' />
+  </path>
+  <path fill="#999" d="M5.429,14.639C5.912,14.36,6.528,14.522,6.804,15l0,0c0.276,0.478,0.108,1.092-0.375,1.371l-3.446,1.989C2.5,18.64,1.884,18.478,1.608,18l0,0c-0.276-0.478-0.108-1.092,0.375-1.371L5.429,14.639z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.5333s' />
+  </path>
+  <path fill="#999" d="M1.011,13C0.452,13,0,12.552,0,12l0,0c0-0.552,0.452-1,1.011-1h3.979C5.548,11,6,11.448,6,12l0,0c0,0.552-0.452,1-1.011,1H1.011z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.6s' />
+  </path>
+  <path fill="#999" d="M6.429,7.629C6.912,7.908,7.08,8.522,6.804,9l0,0C6.528,9.478,5.912,9.64,5.429,9.361L1.983,7.371C1.5,7.092,1.332,6.478,1.608,6l0,0C1.884,5.522,2.5,5.36,2.983,5.639L6.429,7.629z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.6667s' />
+  </path>
+  <path fill="#999" d="M9.361,5.429C9.64,5.912,9.478,6.528,9,6.804l0,0C8.522,7.08,7.908,6.912,7.629,6.429L5.639,2.983C5.36,2.5,5.522,1.884,6,1.608l0,0C6.478,1.332,7.092,1.5,7.371,1.983L9.361,5.429z">
+    <animate attributeType='CSS' attributeName='opacity' from='1' to='0' dur='0.8s' repeatCount='indefinite' begin='0.7333s' />
+  </path>
+
+</svg>

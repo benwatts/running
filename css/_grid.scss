@@ -23,6 +23,7 @@ $cols: 24;
 .row {
   margin-left: ($halfGutter * -1);
   margin-right: ($halfGutter * -1);
+  margin-bottom: $gutter;
 }
 .row:before,
 .row:after {
@@ -32,6 +33,10 @@ $cols: 24;
 .row:after {
   clear: both;
 }
+.row-attached {
+  margin-bottom: 0;
+}
+
 
 [class^="span-"]{
   float: left;

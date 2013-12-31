@@ -2,30 +2,32 @@
 
 @import 'grid';
 
-$jan: #ffff00;
-$feb: #ffad00;
-$mar: #ff5200;
-$apr: #ff006b;
-$may: #ff00ff;
-$jun: #7200ff;
-$jul: #4e00ff;
-$aug: #0029ff;
-$sep: #00ffff;
-$oct: #21debd;
-$nov: #18e763;
-$dec: #52ff00;
+$jan: #fef200;
+$feb: #fdb813;
+$mar: #f68b1f;
+$apr: #f15a23;
+$may: #ed1b24;
+$jun: #b72468;
+$jul: #662e91;
+$aug: #524ea2;
+$sep: #0071bd;
+$oct: #01a89e;
+$nov: #3ab54a;
+$dec: #cadb2a;
+
+$pgBackground: #eee;
 
 html, body {
   margin: 0;
-  background: #222;
+  background: $pgBackground;
   font-size: 16px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #ddd;
+  color: #666;
 }
 
+h1,h2,h3,h4 { font-family: "halis gr"; }
 h1 {
   color: #fff;
-  font-family: "ff-enzo-web";
   font-weight: 200;
   text-transform: uppercase;
 }
@@ -33,25 +35,44 @@ h1 {
 // Header
 // --
 .row-header {
-  background: #6acce1;
+  background: #555;
   text-align: center;
 }
 
 // Map
 // --
 .container-map {
-  background: #2f2f2f;
+  background: #fff;
   padding: 0 $halfGutter;
 }
 
 .map {
   width: 100%;
   height: 512px;
+  position: relative;
+}
+
+.map-loading-overlay {
+  background: #fff;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  .ico-loading{
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: -12px 0 0 -12px;
+    z-index: 3;
+    background-size: 48px 48px;
+  }
 }
 
 path {
   stroke-width: 2;
-  stroke-opacity: 0.25;
+  stroke-opacity: 0.33;
 }
 path[class^="date-01"]{ stroke: $jan; }
 path[class^="date-02"]{ stroke: $feb; }
@@ -68,40 +89,91 @@ path[class^="date-12"]{ stroke: $dec; }
 
 // Map date controls
 // --
+.date-toggles {
+  padding: 0;
+  margin: 0;
+}
 .date-toggles li {
-  margin: 0; padding: 0;
+  margin: 0;
   list-style: none;
 }
 .date-toggle-btn {
+  font-size: 12px;
   display: block;
-  background: #333;
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
   padding: 10px;
   color: #333;
+  border-bottom: solid 3px #fff;
+  margin-right: 3px;
+  background: #fff;
+  border-radius: 0 0 2px 2px;
 }
 .date-toggle-btn:hover{
   background: #fff;
 }
 
-.date-toggle-jan { border-bottom: solid 1px $jan; color: $jan;  }
-.date-toggle-feb { border-bottom: solid 1px $feb; color: $feb;  }
-.date-toggle-mar { border-bottom: solid 1px $mar; color: $mar;  }
-.date-toggle-apr { border-bottom: solid 1px $apr; color: $apr;  }
-.date-toggle-may { border-bottom: solid 1px $may; color: $may;  }
-.date-toggle-jun { border-bottom: solid 1px $jun; color: $jun;  }
-.date-toggle-jul { border-bottom: solid 1px $jul; color: $jul;  }
-.date-toggle-aug { border-bottom: solid 1px $aug; color: $aug;  }
-.date-toggle-sep { border-bottom: solid 1px $sep; color: $sep;  }
-.date-toggle-oct { border-bottom: solid 1px $oct; color: $oct;  }
-.date-toggle-nov { border-bottom: solid 1px $nov; color: $nov;  }
-.date-toggle-dec { border-bottom: solid 1px $dec; color: $dec;  }
+.date-toggle-jan { border-color: $jan; }
+.date-toggle-feb { border-color: $feb; }
+.date-toggle-mar { border-color: $mar; }
+.date-toggle-apr { border-color: $apr; }
+.date-toggle-may { border-color: $may; }
+.date-toggle-jun { border-color: $jun; }
+.date-toggle-jul { border-color: $jul; }
+.date-toggle-aug { border-color: $aug; }
+.date-toggle-sep { border-color: $sep; }
+.date-toggle-oct { border-color: $oct; }
+.date-toggle-nov { border-color: $nov; }
+.date-toggle-dec { border-color: $dec; }
 
 .date-toggle-btn.is-disabled {
-  color: #666;
-  border-bottom-color: #999;
+  color: #ccc;
+  background: #f7f7f7;
+  border-bottom-color: #ddd;
 }
+
+// Sections
+// --
+.section-header {
+  position: relative;
+  text-align: center;
+  h2 {
+    background: $pgBackground;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 0 $gutter;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  &:after {
+    content: "\0000";
+    border-bottom: solid 1px #ddd;
+    display: block;
+    position: absolute;
+    top: 50%;
+    font-size: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+// Icons
+// --
+.ico {
+  display: inline-block;
+}
+.ico-24 { width: 24px; height: 24px; }
+.ico-48 { width: 48px; height: 48px; }
+.ico-loading {
+  // yes, an SVG. won't work in IE (any version). deal with it.
+  background: url(../../images/loading.svg) 0 0 no-repeat;
+}
+
 
 // Error msg
 // --
