@@ -33,10 +33,14 @@ $cols: 24;
   clear: both;
 }
 
+[class^="span-"]{
+  float: left;
+}
+
 $c: $cols;
 @while $c > 0 {
   .span-#{$c}{
-    width: (($c/$cols)*100%)
+    width: (($c/$cols)*100%);
   }
   $c: $c - 1
 }

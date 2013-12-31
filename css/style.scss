@@ -2,6 +2,19 @@
 
 @import 'grid';
 
+$jan: #ffff00;
+$feb: #ffad00;
+$mar: #ff5200;
+$apr: #ff006b;
+$may: #ff00ff;
+$jun: #7200ff;
+$jul: #4e00ff;
+$aug: #0029ff;
+$sep: #00ffff;
+$oct: #21debd;
+$nov: #18e763;
+$dec: #52ff00;
+
 html, body {
   margin: 0;
   background: #222;
@@ -17,15 +30,15 @@ h1 {
   text-transform: uppercase;
 }
 
-
 // Header
+// --
 .row-header {
   background: #6acce1;
   text-align: center;
 }
 
 // Map
-
+// --
 .container-map {
   background: #2f2f2f;
   padding: 0 $halfGutter;
@@ -36,8 +49,68 @@ h1 {
   height: 512px;
 }
 
-.map path {
-  stroke-width: 1;
+path {
+  stroke-width: 2;
   stroke-opacity: 0.25;
-  stroke: #6acce1;
+}
+path[class^="date-01"]{ stroke: $jan; }
+path[class^="date-02"]{ stroke: $feb; }
+path[class^="date-03"]{ stroke: $mar; }
+path[class^="date-04"]{ stroke: $apr; }
+path[class^="date-05"]{ stroke: $may; }
+path[class^="date-06"]{ stroke: $jun; }
+path[class^="date-07"]{ stroke: $jul; }
+path[class^="date-08"]{ stroke: $aug; }
+path[class^="date-09"]{ stroke: $sep; }
+path[class^="date-10"]{ stroke: $oct; }
+path[class^="date-11"]{ stroke: $nov; }
+path[class^="date-12"]{ stroke: $dec; }
+
+// Map date controls
+// --
+.date-toggles li {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.date-toggle-btn {
+  display: block;
+  background: #333;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 10px;
+  color: #333;
+}
+.date-toggle-btn:hover{
+  background: #fff;
+}
+
+.date-toggle-jan { border-bottom: solid 1px $jan; color: $jan;  }
+.date-toggle-feb { border-bottom: solid 1px $feb; color: $feb;  }
+.date-toggle-mar { border-bottom: solid 1px $mar; color: $mar;  }
+.date-toggle-apr { border-bottom: solid 1px $apr; color: $apr;  }
+.date-toggle-may { border-bottom: solid 1px $may; color: $may;  }
+.date-toggle-jun { border-bottom: solid 1px $jun; color: $jun;  }
+.date-toggle-jul { border-bottom: solid 1px $jul; color: $jul;  }
+.date-toggle-aug { border-bottom: solid 1px $aug; color: $aug;  }
+.date-toggle-sep { border-bottom: solid 1px $sep; color: $sep;  }
+.date-toggle-oct { border-bottom: solid 1px $oct; color: $oct;  }
+.date-toggle-nov { border-bottom: solid 1px $nov; color: $nov;  }
+.date-toggle-dec { border-bottom: solid 1px $dec; color: $dec;  }
+
+.date-toggle-btn.is-disabled {
+  color: #666;
+  border-bottom-color: #999;
+}
+
+// Error msg
+// --
+.row-warning {
+  color: #444;
+  background: #fada58;
+  text-align: center;
+  display: none;
+  .no-svg-support & { display: block; }
+  a { color: #444; }
+  a:hover { color: #000; }
 }
