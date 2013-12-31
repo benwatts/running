@@ -173,3 +173,28 @@ path[class^="date-12"]{ stroke: $dec; }
   a { color: #444; }
   a:hover { color: #000; }
 }
+
+
+// Races
+// --
+.row-races {
+  margin-top: 60px;
+}
+.races-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    padding: $gutter 0;
+    border-bottom: solid 1px #ddd;
+    &:last-child { border: none; }
+  }
+}
+.race-title {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 36px;
+  color: #ccc;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
