@@ -29,19 +29,47 @@
   <div class="row row-header row-attached">
     <div class="container">
       <div class="span-24">
-        <header class="masthead">
-          <h1>Running 2013</h1>
-        </header>
+        <h1 class="header-title">Running 2013</h1>
       </div>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row row-map">
     <div class="container-map">
       <div class="map" id="map">
         <div class="map-loading-overlay" id="map-loading">
           <i class="ico ico-48 ico-loading"></i>
         </div>
+      </div>
+      <div class="span-6 col-yearly-stats">
+        <div class="box box-stat">
+          <h3 class="stat-title">Distance</h3>
+          <p class="stat-val">
+            <span class="odo" data-val="1500.95">0</span>
+            <span class="stat-val-unit">km</span>
+          </p>
+        </div>
+        <div class="box box-stat">
+          <h3 class="stat-title">Elevation gain</h3>
+          <p class="stat-val">
+            <span class="odo" data-val="29789"></span>
+            <span class="stat-val-unit">m</span>
+          </p>
+        </div>
+        <div class="box box-stat">
+          <h3 class="stat-title">Average speed</h3>
+          <p class="stat-val">
+            <span class="odo" data-val="9.1">0</span>
+            <span class="stat-val-unit">km/h</span>
+          </p>
+        </div>
+        <div class="box box-stat" title="This one is probably wildly inaccurate.">
+          <h3 class="stat-title">Calories</h3>
+          <p class="stat-val">
+            <span class="odo" data-val="95444">0</span>
+          </p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -130,6 +158,7 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
   <script src="//api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js"></script>
   <script src="js/vendor/moment.min.js"></script>
+  <script src="js/vendor/odometer.min.js"></script>
   <script src="js/build/app.js"></script>
 
   <script>

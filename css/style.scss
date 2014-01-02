@@ -1,42 +1,57 @@
 // cool stuff bro
 
+$defaultStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@font-face {font-family: 'Roble'; src: url('../fonts/297320_2_0.eot');src: url('../fonts/297320_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/297320_2_0.woff') format('woff'),url('../fonts/297320_2_0.ttf') format('truetype');}
+@font-face {font-family: 'RobleThin';src: url('../fonts/297320_F_0.eot');src: url('../fonts/297320_F_0.eot?#iefix') format('embedded-opentype'),url('../fonts/297320_F_0.woff') format('woff'),url('../fonts/297320_F_0.ttf') format('truetype');}
+@font-face {font-family: 'RobleMedium'; src: url('../fonts/297320_D_0.eot');src: url('../fonts/297320_D_0.eot?#iefix') format('embedded-opentype'),url('../fonts/297320_D_0.woff') format('woff'),url('../fonts/297320_D_0.ttf') format('truetype');}
+
 @import 'grid';
 @import 'colours';
+@import 'vendor/odometer-theme-default';
 
 
 html, body {
   margin: 0;
   background: $pgBackground;
-  font-size: 16px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 16px $defaultStack;
   color: #666;
 }
 
-h1,h2,h3,h4 { font-family: "halis gr"; }
-h1 {
-  color: #fff;
-  font-weight: 200;
-  text-transform: uppercase;
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
 }
 
 // Header
 // --
 .row-header {
-  background: #555;
+  background: #6acce1;
   text-align: center;
+  padding: 20px 0 15px 0;
+  position: relative;
+  z-index: 10;
+}
+.header-title {
+  font-weight: 100;
+  font-family: 'Roble';
+  font-size: 24px;
+  margin: 0;
+  color: #b5e6f0;
+  text-align: left;
 }
 
 // Map
 // --
 .container-map {
-  background: #fff;
-  padding: 0 $halfGutter;
+  overflow: hidden;
 }
 
 .map {
-  width: 100%;
+  float: left;
+  width: 75%;
   height: 512px;
   position: relative;
+  box-shadow: 3px 0 0 rgba(0,0,0,.25);
 }
 
 .map-loading-overlay {
@@ -58,7 +73,7 @@ h1 {
 }
 
 path {
-  stroke-width: 2;
+  stroke-width: 1.5;
   stroke-opacity: 0.33;
 }
 path[class^="date-01"]{ stroke: $jan; }
@@ -120,12 +135,55 @@ path[class^="date-12"]{ stroke: $dec; }
   border-bottom-color: #ddd;
 }
 
+// 2013 stats
+// --
+.row-map {
+  background: #222;
+}
+
+.block-header {
+  font-family: 'Roble', $defaultStack;
+  background: #2d2d2d;
+  text-align: center;
+  color: #666;
+  font-weight: 100;
+  font-size: 24px;
+  padding: 15px 0 6px 0;
+  border-bottom: solid 1px #333
+}
+.box-stat {
+  text-align: left;
+  padding: $gutter;
+  border-bottom: solid 1px #333;
+  &:last-child { border: none; }
+}
+.stat-title {
+  font-family: 'Roble', $defaultStack;
+  color: #666;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+}
+.stat-val {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 100;
+  margin: 0;
+  @media (max-width: 1020px)  { font-size: 28px; }
+}
+.stat-val-unit {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+
 // Sections
 // --
 .section-header {
   position: relative;
   text-align: center;
   h2 {
+    font-family: 'Roble', $defaultStack;
     background: $pgBackground;
     position: relative;
     z-index: 2;
@@ -198,3 +256,8 @@ path[class^="date-12"]{ stroke: $dec; }
   margin: 0;
   letter-spacing: -0.01em;
 }
+
+
+// Utils
+// --
+.hide { display: none; }

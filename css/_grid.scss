@@ -21,8 +21,8 @@ $cols: 24;
 }
 
 .row {
-  margin-left: ($halfGutter * -1);
-  margin-right: ($halfGutter * -1);
+  //margin-left: ($halfGutter * -1);
+  //margin-right: ($halfGutter * -1);
   margin-bottom: $gutter;
 }
 .row:before,

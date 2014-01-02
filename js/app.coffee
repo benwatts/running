@@ -43,6 +43,15 @@ class RunningMap
       complete: @mapLoaded
       dataType: 'json'
 
+    $('.odo').each () ->
+      console.log "hey", $(@)[0]
+      od = new Odometer
+        el: $(@)[0]
+        value: 0
+        format: "(,ddd).dd"
+        theme: "default"
+      od.update $(@).attr('data-val')
+
     return @map
 
   mapLoadSuccess: (data, textStatus) =>
