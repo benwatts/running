@@ -6,7 +6,7 @@ class RunningMap
       console.log "GL"
 
     @map = L.mapbox.map 'map','benwatts.gl9fek8p'
-    @map.setView([45.42249176479468, -75.69779634475708], 14);
+    @map.setView([45.42185921726068, -75.71292400360107], 13);
     @map.on 'layeradd', (e) ->
       if e.layer.hasOwnProperty('feature')
         feature = e.layer.feature
