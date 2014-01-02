@@ -74,7 +74,7 @@ h1,h2,h3,h4,h5,h6 {
 
 path {
   stroke-width: 1.5;
-  stroke-opacity: 0.33;
+  stroke-opacity: 0.4;
 }
 path[class^="date-01"]{ stroke: $jan; }
 path[class^="date-02"]{ stroke: $feb; }
@@ -89,6 +89,7 @@ path[class^="date-10"]{ stroke: $oct; }
 path[class^="date-11"]{ stroke: $nov; }
 path[class^="date-12"]{ stroke: $dec; }
 
+
 // Map date controls
 // --
 .date-toggles {
@@ -96,43 +97,103 @@ path[class^="date-12"]{ stroke: $dec; }
   margin: 0;
 }
 .date-toggles li {
+  cursor: pointer;
+  box-sizing: border-box;
   margin: 0;
   list-style: none;
+  padding-right: 3px;
+  &:last-child { margin-right: 0; }
+  &:hover .date-toggle-label {
+    color: #000;
+    text-decoration: underline;
+  }
 }
-.date-toggle-btn {
-  font-size: 12px;
+
+.bar-col {
+  height: 100px;
+  position: relative;
+}
+.bar {
+  position: absolute;
+  bottom: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+}
+
+.date-toggle-label {
+  font: 14px 'Roble', $defaultStack;
   display: block;
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
-  padding: 10px;
+  margin: 0;
+  padding: 10px 0 5px 0;
   color: #333;
   border-bottom: solid 3px #fff;
-  margin-right: 3px;
   background: #fff;
   border-radius: 0 0 2px 2px;
 }
-.date-toggle-btn:hover{
-  background: #fff;
+.date-toggle-distance {
+  font: 14px 'Roble', $defaultStack;
+  color: #999;
+  text-align: center;
+  margin: 10px 0 0 0;
 }
 
-.date-toggle-jan { border-color: $jan; }
-.date-toggle-feb { border-color: $feb; }
-.date-toggle-mar { border-color: $mar; }
-.date-toggle-apr { border-color: $apr; }
-.date-toggle-may { border-color: $may; }
-.date-toggle-jun { border-color: $jun; }
-.date-toggle-jul { border-color: $jul; }
-.date-toggle-aug { border-color: $aug; }
-.date-toggle-sep { border-color: $sep; }
-.date-toggle-oct { border-color: $oct; }
-.date-toggle-nov { border-color: $nov; }
-.date-toggle-dec { border-color: $dec; }
+.month-jan {
+  .bar {                 background: $jan; }
+  .date-toggle-label { border-color: $jan; }
+}
+.month-feb {
+  .bar {                 background: $feb; }
+  .date-toggle-label { border-color: $feb; }
+}
+.month-mar {
+  .bar {                 background: $mar; }
+  .date-toggle-label { border-color: $mar; }
+}
+.month-apr {
+  .bar {                 background: $apr; }
+  .date-toggle-label { border-color: $apr; }
+}
+.month-may {
+  .bar {                 background: $may; }
+  .date-toggle-label { border-color: $may; }
+}
+.month-jun {
+  .bar {                 background: $jun; }
+  .date-toggle-label { border-color: $jun; }
+}
+.month-jul {
+  .bar {                 background: $jul; }
+  .date-toggle-label { border-color: $jul; }
+}
+.month-aug {
+  .bar {                 background: $aug; }
+  .date-toggle-label { border-color: $aug; }
+}
+.month-sep {
+  .bar {                 background: $sep; }
+  .date-toggle-label { border-color: $sep; }
+}
+.month-oct {
+  .bar {                 background: $oct; }
+  .date-toggle-label { border-color: $oct; }
+}
+.month-nov {
+  .bar {                 background: $nov; }
+  .date-toggle-label { border-color: $nov; }
+}
+.month-dec {
+  .bar {                 background: $dec; }
+  .date-toggle-label { border-color: $dec; }
+}
 
-.date-toggle-btn.is-disabled {
+.date-toggle.is-disabled {
+  .bar { background: #ddd; }
+  .date-toggle-label { border-bottom-color: #ddd; }
   color: #ccc;
-  background: #f7f7f7;
-  border-bottom-color: #ddd;
 }
 
 // 2013 stats
@@ -170,6 +231,7 @@ path[class^="date-12"]{ stroke: $dec; }
   font-weight: 100;
   margin: 0;
   @media (max-width: 1020px)  { font-size: 28px; }
+  @media (max-width: 875px)  { font-size: 22px; }
 }
 .stat-val-unit {
   vertical-align: middle;

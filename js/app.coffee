@@ -1,24 +1,5 @@
 class RunningMap
 
-  @distance:
-    'month':
-      'jan': 87
-      'feb': 115
-      'mar': 153
-      'apr': 211
-      'may': 180
-      'jun': 141
-      'jul': 153
-      'aug': 117
-      'sep': 118
-      'oct': 92
-      'nov': 68
-      'dec': 62
-    'year':
-      'distance': 1496
-      'gain': 0
-      'time': 0
-
   constructor: ->
     if !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1")
       $('html').addClass 'no-svg-support'
@@ -33,10 +14,6 @@ class RunningMap
         shapePath = e.layer._container.firstChild
         shapePath.classList.add "date-#{activityDate}"
 
-    $('.date-toggle-btn').on 'click', (e) ->
-      $('.' + $(this).attr('data-paths')).toggle()
-      $(this).toggleClass('is-disabled')
-
     jQuery.ajax
       url: 'data/running-data.json'
       success: @mapLoadSuccess
@@ -44,13 +21,23 @@ class RunningMap
       dataType: 'json'
 
     $('.odo').each () ->
-      console.log "hey", $(@)[0]
       od = new Odometer
         el: $(@)[0]
         value: 0
         format: "(,ddd).dd"
         theme: "default"
       od.update $(@).attr('data-val')
+
+    $('.date-toggle').on 'click', (e) ->
+      $('.' + $(@).attr('data-paths')).toggle()
+      $(@).toggleClass('is-disabled')
+
+    totalDistance = 1505
+    $('.bar').each () ->
+      distance = $(@).attr('data-val');
+      barHeight = (distance/totalDistance)*700
+      $(@).css('height', barHeight+'%')
+      $(@).parents('li').append("<p class='date-toggle-distance'>#{distance} km</p>")
 
     return @map
 
