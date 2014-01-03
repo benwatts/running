@@ -2,12 +2,26 @@
 
 $defaultStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+$jan: #fef200;
+$feb: #fdb813;
+$mar: #f68b1f;
+$apr: #f15a23;
+$may: #ed1b24;
+$jun: #b72468;
+$jul: #8f40bd;
+$aug: #736dc7;
+$sep: #009ed7;
+$oct: #01cbc5;
+$nov: #51d368;
+$dec: #dfe93b;
+
+$pgBackground: #eee;
+
 @font-face {font-family: 'Roble'; src: url('../fonts/297320_2_0.eot');src: url('../fonts/297320_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/297320_2_0.woff') format('woff'),url('../fonts/297320_2_0.ttf') format('truetype');}
 @font-face {font-family: 'RobleThin';src: url('../fonts/297320_F_0.eot');src: url('../fonts/297320_F_0.eot?#iefix') format('embedded-opentype'),url('../fonts/297320_F_0.woff') format('woff'),url('../fonts/297320_F_0.ttf') format('truetype');}
 @font-face {font-family: 'RobleMedium'; src: url('../fonts/297320_D_0.eot');src: url('../fonts/297320_D_0.eot?#iefix') format('embedded-opentype'),url('../fonts/297320_D_0.woff') format('woff'),url('../fonts/297320_D_0.ttf') format('truetype');}
 
 @import 'grid';
-@import 'colours';
 @import 'vendor/odometer-theme-default';
 
 
