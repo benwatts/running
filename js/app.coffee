@@ -6,7 +6,7 @@ class RunningMap
       console.log "GL"
 
     @map = L.mapbox.map 'map'
-    @map.addLayer Lmapbox.tileLayer 'benwatts.gl9fek8p', { detectRetina: true }
+    @map.addLayer L.mapbox.tileLayer 'benwatts.gl9fek8p', { detectRetina: true }
     @map.setView([45.42185921726068, -75.71292400360107], 13);
     @map.on 'layeradd', (e) ->
       if e.layer.hasOwnProperty('feature')
