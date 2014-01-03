@@ -22,9 +22,9 @@ $cols: 24;
 }
 
 .row {
+  padding: $gutter*2 0;
   //margin-left: ($halfGutter * -1);
   //margin-right: ($halfGutter * -1);
-  margin-bottom: $gutter;
 }
 .row:before,
 .row:after {
@@ -35,7 +35,10 @@ $cols: 24;
   clear: both;
 }
 .row-attached {
-  margin-bottom: 0;
+  padding: 0;
+}
+.row-plain {
+  background: #fff;
 }
 
 
