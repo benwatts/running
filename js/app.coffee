@@ -21,7 +21,7 @@ class RunningMap
       complete: @mapLoaded
       dataType: 'json'
 
-    $('.odo').each () ->
+    $('.odo').each ->
       od = new Odometer
         el: $(@)[0]
         value: 0
@@ -42,13 +42,34 @@ class RunningMap
 
     return @map
 
+  gratuitousAnimation: -> # because.
+    $('path').each (i, e) =>
+      animationLength = @randomInt(10000,5000)
+      $p = $(e)
+      pLength = $p[0].getTotalLength()
+
+      $p.attr 'stroke-dasharray', "#{pLength} #{pLength}"
+      $p.attr 'stroke-dashoffset', "#{pLength}"
+
+      $p.css '-webkit-animation-duration', "#{animationLength}ms"
+      $p.css '-moz-animation-duration', "#{animationLength}ms"
+      $p.css 'animation-duration', "#{animationLength}ms"
+
+      $p.on 'animationend MSAnimationEnd webkitAnimationEnd', ->
+        $(@).attr 'stroke-dashoffset', "0" #... I'm animating to 0, so I don't know why I need to do this. ffs.
+
+
+  randomInt: (max, min) ->
+    Math.floor(Math.random() * (max - min + 1)) + min
+
   mapLoadSuccess: (data, textStatus) =>
     for activity in data.activities
       feature = L.geoJson(activity, {clickable: false}).addTo(@map)
     $('#map-loading').fadeOut(300)
+    @gratuitousAnimation()
 
-  mapLoadError: (jqXHR, textStatus, errorThrown) ->
-    console.log errorThrown
+  mapLoadError: (jqXHR, textStatus, e) ->
+    console.log e
 
   mapLoaded: (jqXHR, textStatus) ->
     console.log 'mapLoaded: ' + textStatus
